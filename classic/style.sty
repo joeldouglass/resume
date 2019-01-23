@@ -3,6 +3,7 @@
 
 \usepackage{titlesec}
 \usepackage{ifthen}
+\usepackage{tcolorbox}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -105,25 +106,22 @@
 \titlespacing*{\section}{0pt}{10pt}{10pt}
 
 %----------------------------------------------------------------------------------------
-%	 CV EVENT
+%	 Resume Row
 %----------------------------------------------------------------------------------------
 
-% creates a stretched box as cv entry headline followed by two paragraphs about 
-% the work you did
-% param 1:	event time i.e. 2014 or 2011-2014 etc.
-% param 2:	event name (what did you do?)
-% param 3:	institution (where did you work / study)
-% param 4:	duties
-%
-\newcommand{\cvevent}[5][lightbg]
+% #1 When
+% #2 What
+% #3 Who
+% #4 Details
+\newcommand{\cvevent}[4]
 {
   \vspace{4pt}
     \begin{minipage}{\linewidth}
-      \textbf{#3} - \textcolor{darkaccent}{#4}
+      \textbf{#2} - \textcolor{darkaccent}{#3}
       \hfill
-      \textcolor{accent1}{#2}
+      \textcolor{accent1}{#1}
     \end{minipage}
-      #5%
+      #4%
     \vspace{12pt}
 }
 
@@ -133,4 +131,27 @@
 
 \newcommand{\projectrole}[1]{
   \textit{\textcolor{accent2}{#1}}
+}
+
+\newcommand{\forkme}[1]{
+  \setlength\fboxsep{10pt}
+  \begin{tcolorbox}[oversize,
+    sharp corners,
+    colback=darkbg,
+    colframe=darkbg,
+    left=.5in,
+    right=.5in]
+  %\colorbox{darkbg}{
+    \begin{minipage}[t]{.96\linewidth}
+      \vspace{2pt}
+      \center{
+        \large\textbf{Fork on GitHub} $
+        \begin{array}{l}
+          \includegraphics[width=0.25in]{../img/GitHub-Mark}
+        \end{array}$
+        \large#1
+      }
+    \end{minipage}
+  %}
+  \end{tcolorbox}
 }

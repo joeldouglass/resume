@@ -1,0 +1,136 @@
+\ProvidesFile{style.sty}
+\ProvidesPackage{style}
+
+\usepackage{titlesec}
+\usepackage{ifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+
+\ifdefined\fontsearchpath\else\newcommand{\fontsearchpath}{../fonts}\fi
+
+\setmainfont[
+	Path=\fontsearchpath/Raleway/,
+	Mapping=tex-text,
+	UprightFont={Raleway-Regular},
+	ItalicFont={Raleway-Italic},
+	BoldFont={Raleway-Bold},
+	BoldItalicFont={Raleway-BoldItalic}
+]{Raleway}
+
+\newfontfamily{\fffancy}[
+	Path=\fontsearchpath/RobotoSlab/,
+	Mapping=tex-text,
+	UprightFont={RobotoSlab-Regular},
+	BoldFont={RobotoSlab-Bold}
+]{RobotoSlab}
+
+% more font size definitions
+\usepackage{moresize}		
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT
+%----------------------------------------------------------------------------------------
+
+%define page styles using geometry
+\usepackage[letterpaper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+\fancyhf{}
+
+%less space between header and content
+%\setlength{\headheight}{-5pt}		
+
+
+% No indentation
+\setlength{\parindent}{0in}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	Colors
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+\definecolor{accent1}{RGB}{44,101,104}
+\definecolor{accent2}{RGB}{239,142,7}
+\definecolor{darkaccent}{RGB}{110,110,110}
+\definecolor{darkbg}{RGB}{225,225,225}
+\definecolor{lightbg}{RGB}{255,255,255}
+
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% --- Section Styles -----------------------------------------------
+\titleformat{\section}
+  {\large\scshape\color{accent1}}{\thesection}{1em}{}[{\titlerule[0.1pt]}]
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by two paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	duties
+%
+\newcommand{\cvevent}[5][lightbg]
+{
+  \vspace{4pt}
+    \begin{minipage}{\linewidth}
+      \textbf{#3} - \textcolor{darkaccent}{#4}
+      \hfill
+      \textcolor{accent1}{#2}
+    \end{minipage}
+      #5%
+    \vspace{12pt}
+}
+
+\newcommand{\taglist}[1]{
+  \textit{\textcolor{accent1}{#1}}
+}
+
+\newcommand{\projectrole}[1]{
+  \textit{\textcolor{accent2}{#1}}
+}

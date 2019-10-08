@@ -1,0 +1,141 @@
+\ProvidesFile{style.sty}
+\ProvidesPackage{style}
+
+\usepackage{titlesec}
+\usepackage{ifthen}
+\usepackage{tcolorbox}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{xunicode}
+
+\ifdefined\fontsearchpath\else\newcommand{\fontsearchpath}{../fonts}\fi
+
+\setmainfont[
+	Path=\fontsearchpath/Roboto/,
+	Mapping=tex-text,
+	UprightFont={Roboto-Regular},
+	ItalicFont={Roboto-Italic},
+	BoldFont={Roboto-Bold},
+	BoldItalicFont={Roboto-BoldItalic}
+]{Roboto}
+
+\newfontfamily{\ffslim}[
+  Path=\fontsearchpath/RobotoCondensed/,
+	Mapping=tex-text,
+	UprightFont={RobotoCondensed-Regular},
+	ItalicFont={RobotoCondensed-Italic},
+	BoldFont={RobotoCondensed-Bold},
+	BoldItalicFont={RobotoCondensed-BoldItalic}
+]{RobotoCondensed}
+
+% more font size definitions
+\usepackage{moresize}		
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT
+%----------------------------------------------------------------------------------------
+
+% Define page styles using geometry
+\usepackage[letterpaper]{geometry}		
+
+% For example, change the margins to 2 inches all round
+\geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in} 	
+
+% No indentation
+\setlength{\parindent}{0in}
+
+%----------------------------------------------------------------------------------------
+%	Colors
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+\definecolor{accent1}{RGB}{111,37,115}
+\definecolor{accent2}{RGB}{44,101,104}
+\definecolor{darkaccent}{RGB}{110,110,110}
+\definecolor{darkbg}{RGB}{225,225,225}
+\definecolor{lightbg}{RGB}{240,240,240}
+
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%----------------------------------------------------------------------------------------
+% Title Style
+%----------------------------------------------------------------------------------------
+
+\titleformat*{\section}{\raggedright\small\ffslim\color{darkaccent}\uppercase}
+\titlespacing*{\section}{2pt}{4pt}{1pt}
+
+%----------------------------------------------------------------------------------------
+% URL Style
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black
+}
+
+%----------------------------------------------------------------------------------------
+% List Styles
+%----------------------------------------------------------------------------------------
+
+\newenvironment{itemize*}%
+  {\vspace{-1em}
+    \begin{itemize}[leftmargin=1em]%
+    \setlength{\itemsep}{1pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+%	 Resume Row
+%----------------------------------------------------------------------------------------
+
+% #1 When
+% #2 What
+% #3 Who
+% #4 Details
+\newcommand{\cvevent}[4]
+{%
+  \vspace{4pt}
+  \textbf{#2} 
+  \hfill
+  \textcolor{accent1}{\ffslim\textbf{#1}} \\
+  \textcolor{darkaccent}{#3} \\
+  {\small #4}
+  \vspace{4pt}
+}
+
+\newcommand{\projlink}[1]{%
+  \href{#1}{VISIT} \includegraphics[width=1em]{../img/external-link-symbol}
+}
+
+\newcommand{\taglist}[1]{%
+  \textcolor{accent1}{#1}
+}
+
+\newcommand{\projectrole}[1]{%
+  \textcolor{accent2}{#1}
+}
+
+\newcommand{\aboutme}[1]{%
+  \setlength\fboxsep{10pt}
+  \begin{tcolorbox}[oversize,
+    sharp corners,
+    colback=darkbg,
+    colframe=darkbg,
+    left=.5in,
+    right=.5in]
+    \begin{minipage}[t]{.96\linewidth}
+      #1
+    \end{minipage}
+  \end{tcolorbox}
+}

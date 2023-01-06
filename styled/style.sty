@@ -44,10 +44,11 @@
 \usepackage[letterpaper]{geometry}		
 
 % For example, change the margins to 2 inches all round
-\geometry{top=0.5in, bottom=0.5in, left=0.5in, right=0.5in} 	
+\geometry{top=0.7in, bottom=0.7in, left=0.7in, right=0.7in} 	
 
 % No indentation
 \setlength{\parindent}{0in}
+
 
 %----------------------------------------------------------------------------------------
 %	Colors
@@ -57,8 +58,9 @@
 
 \definecolor{accent1}{RGB}{111,37,115}
 \definecolor{accent2}{RGB}{44,101,104}
-\definecolor{darkaccent}{RGB}{110,110,110}
-\definecolor{darkbg}{RGB}{225,225,225}
+\definecolor{darkgreyaccent}{RGB}{30,30,60}
+\definecolor{greyaccent}{RGB}{50,50,60}
+\definecolor{darkbg}{RGB}{205,215,215}
 \definecolor{lightbg}{RGB}{240,240,240}
 
 
@@ -69,8 +71,16 @@
 % Title Style
 %----------------------------------------------------------------------------------------
 
-\titleformat*{\section}{\raggedright\small\ffslim\color{darkaccent}\uppercase}
-\titlespacing*{\section}{2pt}{4pt}{1pt}
+\titleformat*{\section}{\raggedright\large\ffslim\color{darkgreyaccent}\uppercase}
+\titlespacing*{\section}{2pt}{20pt}{-2.5pt}
+\titleformat*{\subsection}{\raggedright\normalsize\ffslim\color{greyaccent}}
+\titlespacing*{\subsection}{2pt}{3pt}{2pt}
+
+%----------------------------------------------------------------------------------------
+% Technology
+%----------------------------------------------------------------------------------------
+
+\newcommand{\techkeyword}[1]{\textbf{#1}}
 
 %----------------------------------------------------------------------------------------
 % URL Style
@@ -109,13 +119,13 @@
   \textbf{#2} 
   \hfill
   \textcolor{accent1}{\ffslim\textbf{#1}} \\
-  \textcolor{darkaccent}{#3} \\
-  {\small #4}
+  \textcolor{greyaccent}{#3} \\
+  {\normalsize #4}
   \vspace{4pt}
 }
 
 \newcommand{\projlink}[1]{%
-  \href{#1}{VISIT} \includegraphics[width=1em]{../img/external-link-symbol}
+  \href{#1}{VISIT}
 }
 
 \newcommand{\taglist}[1]{%
@@ -132,10 +142,10 @@
     sharp corners,
     colback=darkbg,
     colframe=darkbg,
-    left=.5in,
-    right=.5in]
+    left=.7in,
+    right=.7in]
     \begin{minipage}[t]{.96\linewidth}
-      #1
+      {\normalsize #1}%
     \end{minipage}
   \end{tcolorbox}
 }

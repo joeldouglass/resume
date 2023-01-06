@@ -1,6 +1,7 @@
-\documentclass{article}	
+\documentclass[11.5pt]{article}	
 \usepackage{enumitem}
 \usepackage{paracol}
+\usepackage{multicol}
 \usepackage{style}
 
 \begin{document}
@@ -15,7 +16,7 @@
 \begin{paracol}{2}
   \begin{leftcolumn}
     \ffslim\HUGE\uppercase{\textbf{Joel} Douglass} \\
-    \hfill \Large Principle Web Developer 
+    \hfill \Large Principle Software Developer
   \end{leftcolumn}
   \begin{rightcolumn}
     \begin{flushright}
@@ -33,114 +34,136 @@
 %----------------------------------------------------------------------------------------
 \vspace{0.15in}
 \aboutme{%
-I'm a full stack developer with over 15 years of experience in software and web development. 
-For the last 7 years, I've been into data communication---particularly visualization and data management systems---as a \textcolor{accent1}{\textbf{Principal Developer}} at \textbf{Velir}, where I lead the Data Visualization practice area.
-I'm a generalist with experience in back end databases and software architecture through front end JavaScript and CSS. Whether it is Python or JavaScript, SQL or NoSQL, OOP or FP, .NET or Java, Mac, *nix or Windows---I belive in using the right tool for the job, even if it means getting out of my comfort zone.
+I am a true full-stack developer with about 20 years in software and web development. I'm
+comfortable in both front-end and back-end teams, whether it be working on a responsive React.js app, 
+designing a distributed software system, writing complex database queries or even debugging
+an Ubuntu server. A pragmatist at heart, I try to approach every project with a fresh perspective by
+carefully considering core requirements and constraints. I've worked with a diverse set of
+languages and frameworks, but believe it is important to use the right tool for the job.
+An opportunity to learn something new is always a plus!
 }
-\vspace{0.15in}
 
 %---------------------------------------------------------------------------------------
-%	Projects
+%	Highlights
 %----------------------------------------------------------------------------------------
 \setlength{\columnseprule}{0pt}
 \setlength{\columnsep}{20pt}
 
-\columnratio{0.66, 0.33}
-\begin{paracol}{2}
-  \begin{leftcolumn}
+\section*{Experience Highlights}
 
-\section*{Notable Projects}
+\begin{multicols}{2}
+\raggedcolumns
 
-\cvevent{2018}
-{Shift Workers by the Numbers}
-{Purpose Campaigns}{%
-Communicating large numbers is hard. This custom visualization attempts to show the large number of U.S. citizens that are affected by a variable work schedule.
-\projectrole{Lead Developer} $\cdot$ \taglist{WebGL, three.js, React.js} $\cdot$ \projlink{https://workshift.us/numbers}%
-}
+\subsection*{User Interface}
+\vspace{0.25in}
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Building and maintaining large \techkeyword{React.js} web UIs
+  \item Prototyping, designing and building custom data visualizations with \techkeyword{D3.js} (SVG \& canvas), \techkeyword{Three.js} (WebGL) and others
+\end{itemize*}
 
-\cvevent{2018}
-{Health Care Quality vs. Spending Interactive}
-{Commonwealth Fund}{%
-Health Care performance varies widely across the U.S. In this visualization, health care quality is contrasted with spending by U.S. state.
-\projectrole{Lead Developer} $\cdot$ \taglist{D3.js, AngularJS} $\cdot$ \projlink{http://tools.commonwealthfund.org/interactives-and-data/spending-vs-quality-interactive}%
-}
+\subsection*{Back-end}
+\vspace{0.25in}
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Designing extensible, versioned APIs with \techkeyword{OpenAPI} and \techkeyword{gRPC}
+  \item Multitier architecture design for back-end systems in \techkeyword{C\#/.NET,} \techkeyword{Java,} \techkeyword{Node.js} (Javascript \& Typescript), \techkeyword{Python} and others
+  \item Database design and implementation w/ \techkeyword{PostgresSQL,} \techkeyword{SQL Server,} \techkeyword{MongoDB} and others
+  \item Document and content search w/ \techkeyword{Elasticsearch,} \techkeyword{Solr,} and others
+  \item Distributed, scalable system design with microservices, \techkeyword{RabbitMQ,} \techkeyword{Redis}
+\end{itemize*}
 
-\cvevent{2016-2018}
-{The Davis Project}
-{Velir}{%
-An experiment with designing and building a data management system framework and library from the ground up. 
-\projectrole{Lead Developer} $\cdot$ \taglist{Node.js, PostgreSQL} $\cdot$ \projlink{https://github.com/thedavisproject}%
-}
+\subsection*{Infrastructure}
+\vspace{0.25in}
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Environment bootstrapping and deployment with \techkeyword{Kubernetes} and \techkeyword{Helm}
+  \item Multiple years experience with each of the three major cloud providers: \techkeyword{AWS,} \techkeyword{Google Cloud,} and \techkeyword{Azure}
+  \item Infrastructure management \& automation with \techkeyword{Terraform}
+\end{itemize*}
 
-\cvevent{2015-Present}
-{CMS Hospital Quality Chartbook}
-{Centers for Medicare and Medicaid}{%
-This collection of data visualizations aims to compare hospital quality statistics around the country.
-\projectrole{Visualization Lead, Developer} $\cdot$ \taglist{Angular.js, D3.js, Drupal} $\cdot$ \projlink{https://cmshospitalchartbook.com}%
-}
+\subsection*{SDLC and Process}
+\vspace{0.25in}
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Creating scalable/reusable CI/CD pipelines with \techkeyword{Jenkins} as well as \techkeyword{GitHub Actions} for repeatable build and unit/integration/system test verification
+  \item Designing and implementing end-to-end developer workflow, integrating \techkeyword{Jira}, CI/CD build pipelines, and GitHub PR checks
+  \item Putting in place promotion and release processes for QA, User Acceptance and Continuous Delivery
+\end{itemize*}
 
-\cvevent{2016-17}
-{Nationwide Adult Medicaid CAHPS}
-{Centers for Medicare and Medicaid}{%
-The NAM CAHPS survey captures estimates of adult Medicaid enrollees’ experiences with the health care system. This site was built from the ground up to communicate the results.
-\projectrole{Lead Back End Developer} $\cdot$ \taglist{ASP.NET, SQL Server, React.js, D3.js} $\cdot$ \projlink{https://nam-cahps.medicaid.gov}%
-}
+\end{multicols}
 
-\cvevent{2015-16}
-{AARP Data Explorer}
-{AARP}{%
-Built for the AARP Public Policy Institute, this data exploration site allows on-demand publishing of new data and updates.
-\projectrole{Tech Lead, Developer} $\cdot$ \taglist{ASP.NET, SQL Server, Angular.js, D3.js, Highcharts.js} $\cdot$ \projlink{https://dataexplorer.aarp.org}%
-}
-
-\cvevent{2014-17}
-{What Would Happen if Health Care in your State Improved?}
-{Commonwealth Fund}{%
-This interactive lets visitors explore how health care performance might be different if their state performed like other states.
-\projectrole{Lead Developer} $\cdot$ \taglist{D3.js, AngularJS} $\cdot$ \projlink{http://tools.commonwealthfund.org/interactives-and-data/estimated-impact-interactive}%
-}
-
-\cvevent{2013-Present}
-{Kids Count Data Center}
-{Annie E. Casey Foundation}{%
-The Kids Count Data Center project is designed to communicate childhood wellbeing data. Built to support 50+ admins around the U.S. uploading and publishing new data daily.
-\projectrole{Lead Developer} $\cdot$ \taglist{ASP.NET, SQL Server, Backbone.js, Highcharts.js, Openlayers.js} $\cdot$ \projlink{https://datacenter.kidscount.org}%
-}
-
-\end{leftcolumn}
-\begin{rightcolumn}
 %---------------------------------------------------------------------------------------
 %	Employment
 %----------------------------------------------------------------------------------------
-\section*{Employment History}
+\section*{Work \& Education History}
 
-\cvevent{2013-Present}
-{Principal Developer, Data Visualization Practice Lead}
-{Velir $\cdot$ Somerville, MA}{%
+\begin{multicols}{2}
+\raggedcolumns
+
+\cvevent{Jan. 2022-Present}
+{Principal Software Engineer}
+{Quickening Investments (Blockchain startup/fund)}{%
 \begin{itemize*}
-  \item Consult on company strategy for data visualization and communication projects
-  \item Evaluate and adopt emerging tools, languages, and frameworks
-  \item Design and document practice area workflows and processes
-  \item Contribute estimates and technology/system proposals to business development teams
-  \item Lead both front and back end project teams by assigning tasks and tracking progress
+  \setlength\itemsep{0.4em}
+  \item Lead design, architecture, development and deployment of a suite of realtime trading tools for algorithmic market monitoring, trade execution and R\&D
+  \item Prototyped, designed and built a clean, \textit{fast} integrated UI with \techkeyword{React.js} and \techkeyword{MUI}
+  \item Developed a set of back-end services with \techkeyword{Node.js/Typescript} to power the full suite of tools
+  \item Deployed and managed tools on AWS using cloud services (\techkeyword{EC2, Elastic Beanstalk, RDS, CloudAMQP}. Configured monitoring and alerts with \techkeyword{AWS CloudWatch})
+  \item Worked with leadership and users to prioritize, research, and groom new product features
 \end{itemize*}
 }
 
-\cvevent{2010-13}
-{Senior Developer}
+\vfill\null
+\columnbreak
+
+\cvevent{2019-Jan. 2022}
+{Principal Software Eng., SAAS Team}
+{Tamr $\cdot$ Cambridge, MA}{%
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Designed and documented parts of the core SAAS services framework, enabling rapid creation of new microservices with shared patterns and workflows
+  \item Defined and implemented dev workflow for the full lifecycle of product features, including:
+  \vspace{0.25in}
+  \begin{itemize*}
+    \item \techkeyword{Jira} automation to link commits with dev tasks and product feature tickets
+    \item \techkeyword{Github} PR workflow including critical code review, build and testing checks
+    \item \techkeyword{Jenkins} CI pipelines for build, integration testing and deployment
+    \item \techkeyword{Kubernetes/Helm} charts and configuration for fast cross-environment deployment
+    \item Continuous Delivery of features through lower environments and finally to production
+    \item All templated and easily applicable to new services
+  \end{itemize*}
+  \item Implemented several core services using the above framework, including Security and Search/Indexing
+  \item Prototyped and implemented user-facing UIs with \techkeyword{React.js}
+\end{itemize*}
+}
+
+\cvevent{2013-2019}
+{Principal Developer, Data Vis. Practice Lead}
 {Velir $\cdot$ Somerville, MA}{%
 \begin{itemize*}
+  \setlength\itemsep{0.4em}
+  \item Full-stack implemention of large-scale data applications including complex UI, back-end \& database
+  \item Design and development of fully custom rich data visualizations
+  \item Consulted on company strategy for data visualization and communication projects
+  \item Evaluated emerging tools, languages, and frameworks
+  \item Designed and documented practice area workflows and processes
+  \item Contributed technology/system proposals and detailed estimates to business development teams
+\end{itemize*}
+}
+
+\vfill\null
+\columnbreak
+
+\cvevent{2008-13}
+{Senior Web Developer}
+{Velir $\cdot$ Somerville, MA}{%
+\begin{itemize*}
+  \setlength\itemsep{0.4em}
   \item Led project development teams by assigning tasks and tracking progress
+  \item Worked with clients, analysts and designers to turn designs and requirements into functioning web applications
   \item Designed custom web applications built on the Sitecore CMS and other platforms
   \item Estimated new project and enhancement work
-\end{itemize*}
-}
-
-\cvevent{2008-10}
-{Web Developer}
-{Velir $\cdot$ Somerville, MA}{%
-\begin{itemize*}
-  \item Worked with lead developers to turn designs and requirements into functioning web applications
   \item Maintained legacy systems built on ColdFusion, Classic ASP and Perl
 \end{itemize*}
 }
@@ -149,24 +172,20 @@ The Kids Count Data Center project is designed to communicate childhood wellbein
 {Senior Systems Engineer}
 {General Dynamics, C4 Systems $\cdot$ Needham, MA}{%
 \begin{itemize*}
+  \setlength\itemsep{0.4em}
   \item Designed, developed, and executed a full test suite for custom Network Interface (NIC) hardware
   \item Held a U.S. DoD SECRET security clearance
 \end{itemize*}
 }
 
-%---------------------------------------------------------------------------------------
-%	Education
-%--------------------------------------------------------------------------------------
-\section*{Education}
-
 \cvevent{1999-03}
 {B.S. Computer and Systems Engineering}
 {Rensselaer Polytechnic Institute $\cdot$ Troy, NY}{%
 \begin{itemize*}
-  \item Graduated Summa Cum Laude
+  \setlength\itemsep{0.4em}
+  \item Summa Cum Laude
 \end{itemize*}
 }
-\end{rightcolumn}
-\end{paracol}
+\end{multicols}
 
 \end{document}
